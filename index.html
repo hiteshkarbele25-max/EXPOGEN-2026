@@ -2,103 +2,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta charset="UTF-8">
 
-    <title>EXPOGEN 2026</title>
+  <title>Expogen 2026 Brochure</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
 
-        html,
-        body {
-            width: 100%;
-            height: 100%;
-            background: #111;
-            overflow: hidden;
-        }
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+    }
 
-        .pdf-container {
-            width: 100%;
-            height: 100%;
-            height: 100dvh;
-            padding-top: env(safe-area-inset-top);
-            padding-bottom: env(safe-area-inset-bottom);
-        }
+    .wrapper {
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
 
-        iframe {
-            display: block;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+      display: flex;
+      flex-direction: column;
 
-        .fallback {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: #111;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 40px 20px;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 20px;
-        }
+      background: #000;
+      color: #fff;
 
-        .fallback h1 {
-            font-size: 24px;
-        }
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    }
 
-        .fallback p {
-            color: #bbb;
-            line-height: 1.5;
-        }
+    header {
+      flex-shrink: 0;
 
-        .fallback a {
-            display: inline-block;
-            padding: 14px 24px;
-            background: white;
-            color: #111;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-        }
+      padding: 8px 12px;
 
-        @media (max-width: 600px) {
-            iframe {
-                height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
-            }
-        }
-    </style>
+      font-size: 14px;
+
+      background: #111;
+      border-bottom: 1px solid #333;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 10px;
+    }
+
+    header .title {
+      font-weight: 600;
+    }
+
+    header .hint {
+      font-size: 12px;
+      opacity: 0.7;
+      text-align: right;
+    }
+
+    .viewer {
+      flex: 1;
+
+      width: 100%;
+      min-height: 0;
+
+      border: none;
+
+      background: #111;
+    }
+
+    .fallback {
+      flex-shrink: 0;
+
+      padding: 12px;
+
+      font-size: 14px;
+      line-height: 1.5;
+
+      background: #111;
+    }
+
+    .fallback a {
+      color: #4da3ff;
+    }
+
+    /* iPhone / small screens */
+    @media (max-width: 600px) {
+      header {
+        padding:
+          8px
+          10px
+          calc(8px + env(safe-area-inset-bottom));
+      }
+
+      header .title {
+        font-size: 13px;
+      }
+
+      header .hint {
+        display: none;
+      }
+
+      .viewer {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="pdf-container">
-        <iframe
-            src="EXPOGEN-2026.pdf#view=FitH"
-            title="EXPOGEN 2026">
-        </iframe>
-    </div>
+  <div class="wrapper">
+
+    <header>
+      <div class="title">
+        Expogen 2026 – Brochure
+      </div>
+
+      <div class="hint">
+        If it doesn't load, use the PDF below.
+      </div>
+    </header>
+
+    <iframe
+      class="viewer"
+      src="EXPOGEN-2026.pdf#view=FitH"
+      title="Expogen 2026 Brochure"
+    ></iframe>
 
     <div class="fallback">
-        <h1>EXPOGEN 2026</h1>
-        <p>
-            If the PDF isn't displaying correctly on your iPhone,
-            open it directly below.
-        </p>
-
-        <a href="EXPOGEN-2026.pdf" target="_blank">
-            Open PDF
-        </a>
+      If the brochure is not visible above,
+      <a href="EXPOGEN-2026.pdf" target="_blank">
+        click here to open the PDF
+      </a>.
     </div>
+
+  </div>
 
 </body>
 </html>
